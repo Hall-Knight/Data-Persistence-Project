@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -9,22 +8,9 @@ using UnityEditor;
 
 public class MenuUIHandler : MonoBehaviour
 {
-    InputField iField;
-
-    string playerName;
-
-    private void Start()
+    public void StartNew()
     {
-        iField = GameObject.Find("Name Field").GetComponent<InputField>();
-    }
-
-    public void PlayBtnClicked()
-    {
-
-        playerName = iField.text;
-        DataPersist.Instance.playerName = playerName;
         SceneManager.LoadScene(1);
-
     }
 
     public void Exit()

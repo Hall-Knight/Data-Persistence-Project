@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
 
-public class DataSave : MonoBehaviour
+public class SaveManager : MonoBehaviour
 {
-    public static DataSave Instance;
-
+    public static SaveManager Instance;
     public string playerName;
+    public string highScorerName;
+
     public int bestScore;
 
     private void Awake()
@@ -18,22 +18,21 @@ public class DataSave : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     [System.Serializable]
     class SaveData
     {
-        public string playerName;
+        public string highScorerName;
         public int bestScore;
     }
 
-    public void Saved()
+    public void SaveHighScorerData()
     {
         SaveData data = new SaveData();
-        data.playerName = playerName;
+        data.highScorerName = highScorerName;
         data.bestScore = bestScore;
 
         string json = JsonUtility.ToJson(data);
@@ -41,15 +40,17 @@ public class DataSave : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
-    public void Loaded()
+    public void LoadHighScorerData()
     {
         string path = Application.persistentDataPath + "/savefile.json";
+
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
+
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            playerName = data.playerName;
+            highScorerName = data.highScorerName;
             bestScore = data.bestScore;
         }
     }

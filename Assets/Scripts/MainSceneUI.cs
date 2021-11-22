@@ -14,7 +14,7 @@ public class MainSceneUI : MonoBehaviour
     }
     public void ShowBestScorer()
     {
-        bestScoreText.text = $"Best Score : {SaveManager.Instance.highScorerName} : {SaveManager.Instance.bestScore} ";
+        bestScoreText.text = "Best Score : Name : Score ";
     }
 
     public void BackToMenu()

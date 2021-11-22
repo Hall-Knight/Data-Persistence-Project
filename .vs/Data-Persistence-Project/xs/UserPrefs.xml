@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MainSceneUI.cs" Line="25" Column="2" />
+      <File FileName="Assets/Scripts/MainManager.cs" Line="31" Column="1" />
+      <File FileName="Assets/Scripts/SaveManager.cs" Line="36" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bdb0e0af-62e4-4139-90f9-4aec3ac7c8ab" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

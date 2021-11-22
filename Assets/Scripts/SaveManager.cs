@@ -8,7 +8,6 @@ public class SaveManager : MonoBehaviour
     public static SaveManager Instance;
     public string playerName;
     public string highScorerName;
-
     public int bestScore;
 
     private void Awake()

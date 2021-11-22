@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+
+public class SaveManager : MonoBehaviour
+{
+    public static SaveManager Instance;
+
+    public int score;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    //info to save and keep persistance in this section
+    [System.Serializable]
+    class SaveData
+    {
+        public int score;
+    }
+
+    public void SaveStats()
+    {
+        SaveData data = new SaveData();
+        data.score = score;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadStats()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            score = data.score;
+        }
+    }
+}

@@ -8,6 +8,8 @@ public class SaveManager : MonoBehaviour
     public static SaveManager Instance;
 
     public int score;
+    public string playerName;
+    public string newPlayerName;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class SaveManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        LoadStats();
     }
 
     //info to save and keep persistance in this section
@@ -26,12 +29,14 @@ public class SaveManager : MonoBehaviour
     class SaveData
     {
         public int score;
+        public string name;
     }
 
     public void SaveStats()
     {
         SaveData data = new SaveData();
         data.score = score;
+        data.name = newPlayerName;
 
         string json = JsonUtility.ToJson(data);
 
@@ -47,6 +52,7 @@ public class SaveManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
             score = data.score;
+            playerName = data.name;
         }
     }
 }

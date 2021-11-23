@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,27 +11,24 @@ using UnityEditor;
 public class UIManager : MonoBehaviour
 {
     public Text bestScoreText;
-    public TMP_InputField playerName;
+    public Text nameText;
+    public string playerName;
+
+    //public TMP_InputField playerName;
 
     public void Start()
     {
-        bestScoreText.text = "Best Score : " + SaveManager.Instance.playerName + " : " + SaveManager.Instance.score;
-    }
-
-    public void EnteredName(string name)
-    {
-        Debug.Log(playerName.text);
-        SaveManager.Instance.newPlayerName = playerName.text;
+        //if (SaveManager.Instance.playerName != null)//TEST
+        //{
+            bestScoreText.text = "Best Score : " + SaveManager.Instance.playerName + " : " + SaveManager.Instance.score;
+        //}
     }
 
     public void StartNew()
     {
+        playerName = nameText.text.ToString();//TEST
+        SaveManager.Instance.playerName = playerName;//TEST
         SceneManager.LoadScene(0);
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene(1);
     }
 
     public void Exit()

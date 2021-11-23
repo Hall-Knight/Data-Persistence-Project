@@ -13,17 +13,20 @@ public class MainManager : MonoBehaviour
     public Text ScoreText;
     public Text bestScoreText;
     public GameObject GameOverText;
-    
+
+    public string playerName;
+
     private bool m_Started = false;
     private int m_Points;
     
     private bool m_GameOver = false;
+
     
     void Start()
     {
         SaveManager.Instance.LoadStats();
 
-        bestScoreText.text = "Best Score : " + SaveManager.Instance.playerName + " : " + SaveManager.Instance.score;
+        bestScoreText.text = $"Best Score : " + SaveManager.Instance.playerName + " : " + SaveManager.Instance.score;
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -76,10 +79,16 @@ public class MainManager : MonoBehaviour
         if(m_Points >= SaveManager.Instance.score)
         {
             SaveManager.Instance.score = m_Points;
+            SaveManager.Instance.playerName = playerName;
             SaveManager.Instance.SaveStats();
         }
 
         m_GameOver = true;
         GameOverText.SetActive(true);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }

@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{605E68B8-218E-F84C-0873-6FCA3FB51308}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SaveManager.cs" Line="42" Column="1" />
-      <File FileName="Assets/Scripts/MainManager.cs" />
+      <File FileName="Assets/Scripts/UIManager.cs" Line="35" Column="6" />
+      <File FileName="Assets/Scripts/SaveManager.cs" Line="23" Column="21" />
+      <File FileName="Assets/Scripts/MainManager.cs" Line="71" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5043db9f-f3c6-45ed-9abf-a8365ee40bc8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="90005899-22a4-421b-8c1e-be797217614a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

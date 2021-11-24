@@ -14,20 +14,21 @@ public class UIManager : MonoBehaviour
     public Text nameText;
     public string playerName;
 
-    //public TMP_InputField playerName;
+    public GameObject saveData;
 
     public void Start()
     {
-        //if (SaveManager.Instance.playerName != null)//TEST
-        //{
+        if (SaveManager.Instance.playerName != null)
+        {
             bestScoreText.text = "Best Score : " + SaveManager.Instance.playerName + " : " + SaveManager.Instance.score;
-        //}
+
+        }
     }
 
     public void StartNew()
     {
-        playerName = nameText.text.ToString();//TEST
-        SaveManager.Instance.playerName = playerName;//TEST
+        playerName = nameText.text.ToString();
+        SaveManager.Instance.playerName = playerName;
         SceneManager.LoadScene(0);
     }
 

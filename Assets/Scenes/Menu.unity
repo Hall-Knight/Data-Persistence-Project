@@ -806,6 +806,7 @@ MonoBehaviour:
   bestScoreText: {fileID: 613245785}
   nameText: {fileID: 380432438}
   playerName: 
+  saveData: {fileID: 618726871}
 --- !u!1 &613245783
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   playerName: 
-  newPlayerName: 
+  bestPlayerName: 
 --- !u!4 &618726873
 Transform:
   m_ObjectHideFlags: 0
